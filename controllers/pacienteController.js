@@ -20,6 +20,24 @@ class PacienteController {
             res.status(500).json({ mensaje: "Error al guardar paciente", error: error.message });
         }
     }
+    // Método para editar
+    static async editar(req, res) {
+        try {
+            await Paciente.actualizar(req.params.id, req.body);
+            res.json({ mensaje: "Paciente actualizado con éxito" });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
+    // Método para borrar
+    static async borrar(req, res) {
+        try {
+            await Paciente.eliminar(req.params.id);
+            res.json({ mensaje: "Paciente eliminado" });
+        } catch (error) {
+            res.status(500).json({ error: error.message });
+        }
+    }
 }
 
 module.exports = PacienteController;

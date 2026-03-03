@@ -20,6 +20,20 @@ class Paciente {
         );
         return result.insertId;
     }
+    
+    static async actualizar(id, datos) {
+        const { nombre, cedula, telefono } = datos;
+        const [result] = await db.query(
+            'UPDATE pacientes SET nombre = ?, cedula = ?, telefono = ? WHERE id = ?',
+            [nombre, cedula, telefono, id]
+        );
+        return result.affectedRows;
+    }
+
+    static async eliminar(id) {
+        const [result] = await db.query('DELETE FROM pacientes WHERE id = ?', [id]);
+        return result.affectedRows;
+    }
 }
 
 module.exports = Paciente;
