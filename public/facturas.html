@@ -10,43 +10,26 @@
         <a href="/pacientes.html">Pacientes</a> | 
         <a href="/examenes.html">Exámenes</a> |
         <a href="/facturas.html"><strong>Facturación</strong></a> |
-        <a href="/medicos.html">Médicos</a>
+        <a href="/medicos.html">Médicos</a> |
+        <a href="/inventario.html">Inventario</a> |
+        <a href="/valores.html">Valores Ref.</a>
     </nav>
 
-    <h1>Gestión de Facturas</h1>
-
-    <section>
-        <form id="factura-form">
-            <select id="paciente_id" required>
-                <option value="">Cargando pacientes...</option>
-            </select>
-            <input type="number" id="monto_total" step="0.01" placeholder="Monto Total" required>
-            <select id="metodo_pago" required>
-                <option value="Efectivo">Efectivo</option>
-                <option value="Tarjeta">Tarjeta</option>
-                <option value="Transferencia">Transferencia</option>
-            </select>
-            <button type="submit">Generar Factura</button>
-        </form>
-    </section>
-
+    <h1>Facturación</h1>
+    <form id="factura-form">
+        <select id="paciente_id" required><option value="">Paciente...</option></select>
+        <input type="number" id="monto_total" step="0.01" placeholder="Monto" required>
+        <select id="metodo_pago">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Tarjeta">Tarjeta</option>
+        </select>
+        <button type="submit">Facturar</button>
+    </form>
     <hr>
-
-    <section>
-        <h2>Historial de Pagos</h2>
-        <table border="1" id="facturas-table">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Paciente</th>
-                    <th>Monto</th>
-                    <th>Método</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
-
+    <table id="facturas-table" border="1">
+        <thead><tr><th>Fecha</th><th>Paciente</th><th>Monto</th><th>Método</th></tr></thead>
+        <tbody></tbody>
+    </table>
     <script src="/js/facturas-client.js"></script>
 </body>
 </html>

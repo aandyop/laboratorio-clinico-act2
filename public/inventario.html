@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inventario - Laboratorio</title>
+    <title>Valores Ref. - Laboratorio</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
@@ -11,45 +11,23 @@
         <a href="/examenes.html">Exámenes</a> |
         <a href="/facturas.html">Facturación</a> |
         <a href="/medicos.html">Médicos</a> |
-        <a href="/inventario.html"><strong>Inventario</strong></a>
+        <a href="/inventario.html">Inventario</a> |
+        <a href="/valores.html"><strong>Valores Ref.</strong></a>
     </nav>
 
-    <h1>Inventario de Reactivos e Insumos</h1>
-
-    <section>
-        <form id="inventario-form">
-            <input type="text" id="nombre_insumo" placeholder="Nombre del Insumo/Reactivo" required>
-            <input type="number" id="cantidad_stock" placeholder="Cantidad Inicial" required>
-            <select id="unidad_medida">
-                <option value="Unidades">Unidades</option>
-                <option value="ML">Mililitros (ML)</option>
-                <option value="Cajas">Cajas</option>
-                <option value="Frascos">Frascos</option>
-            </select>
-            <label for="fecha_vencimiento">Vencimiento:</label>
-            <input type="date" id="fecha_vencimiento" required>
-            <button type="submit">Agregar al Inventario</button>
-        </form>
-    </section>
-
+    <h1>Valores de Referencia</h1>
+    <form id="valores-form">
+        <input type="text" id="nombre_examen" placeholder="Examen" required>
+        <input type="number" id="valor_minimo" step="0.01" placeholder="Min" required>
+        <input type="number" id="valor_maximo" step="0.01" placeholder="Max" required>
+        <input type="text" id="unidad" placeholder="Unidad" required>
+        <button type="submit">Guardar</button>
+    </form>
     <hr>
-
-    <section>
-        <h2>Stock Actual</h2>
-        <table border="1" id="inventario-table">
-            <thead>
-                <tr>
-                    <th>Insumo</th>
-                    <th>Stock</th>
-                    <th>Unidad</th>
-                    <th>Vencimiento</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
-
-    <script src="/js/inventario-client.js"></script>
+    <table id="valores-table" border="1">
+        <thead><tr><th>Examen</th><th>Rango</th><th>Unidad</th></tr></thead>
+        <tbody></tbody>
+    </table>
+    <script src="/js/valores-client.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Gestión de Exámenes - Laboratorio</title>
+    <title>Exámenes - Laboratorio</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
@@ -10,40 +10,28 @@
         <a href="/pacientes.html">Pacientes</a> | 
         <a href="/examenes.html"><strong>Exámenes</strong></a> |
         <a href="/facturas.html">Facturación</a> |
-        <a href="/medicos.html">Médicos</a>
+        <a href="/medicos.html">Médicos</a> |
+        <a href="/inventario.html">Inventario</a> |
+        <a href="/valores.html">Valores Ref.</a>
     </nav>
 
-    <h1>Control de Exámenes</h1>
-
+    <h1>Historial de Exámenes</h1>
     <section>
         <form id="examen-form">
-            <select id="paciente_id" required>
-                <option value="">Cargando pacientes...</option>
-            </select>
-            <input type="text" id="tipo_examen" placeholder="Tipo de Examen" required>
+            <select id="paciente_id" required><option value="">Cargando...</option></select>
+            <input type="text" id="tipo_examen" placeholder="Examen" required>
             <input type="text" id="resultado" placeholder="Resultado" required>
             <input type="date" id="fecha" required>
-            <button type="submit">Registrar Examen</button>
+            <button type="submit">Registrar</button>
         </form>
     </section>
-
     <hr>
-
-    <section>
-        <h2>Historial de Exámenes</h2>
-        <table border="1" id="examenes-table">
-            <thead>
-                <tr>
-                    <th>Paciente</th>
-                    <th>Examen</th>
-                    <th>Resultado</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
-
+    <table id="examenes-table" border="1">
+        <thead>
+            <tr><th>Paciente</th><th>Examen</th><th>Resultado</th><th>Fecha</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
     <script src="/js/examenes-client.js"></script>
 </body>
 </html>
