@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario - Laboratorio</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/pacientes.html">Pacientes</a> | 
+        <a href="/examenes.html">Exámenes</a> |
+        <a href="/facturas.html">Facturación</a> |
+        <a href="/medicos.html">Médicos</a> |
+        <a href="/inventario.html"><strong>Inventario</strong></a>
+    </nav>
+
+    <h1>Inventario de Reactivos e Insumos</h1>
+
+    <section>
+        <form id="inventario-form">
+            <input type="text" id="nombre_insumo" placeholder="Nombre del Insumo/Reactivo" required>
+            <input type="number" id="cantidad_stock" placeholder="Cantidad Inicial" required>
+            <select id="unidad_medida">
+                <option value="Unidades">Unidades</option>
+                <option value="ML">Mililitros (ML)</option>
+                <option value="Cajas">Cajas</option>
+                <option value="Frascos">Frascos</option>
+            </select>
+            <label for="fecha_vencimiento">Vencimiento:</label>
+            <input type="date" id="fecha_vencimiento" required>
+            <button type="submit">Agregar al Inventario</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Stock Actual</h2>
+        <table border="1" id="inventario-table">
+            <thead>
+                <tr>
+                    <th>Insumo</th>
+                    <th>Stock</th>
+                    <th>Unidad</th>
+                    <th>Vencimiento</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="/js/inventario-client.js"></script>
+</body>
+</html>

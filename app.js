@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var pacientesRouter = require('./routes/pacientes.js');
 var examenesRouter = require('./routes/examenes');
 const medicosRouter = require('./routes/medicos');
+const inventarioRouter = require('./routes/inventario');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/pacientes', pacientesRouter);
 app.use('/api/examenes', examenesRouter);
 app.use('/api/medicos', medicosRouter);
 app.use('/api/facturas', require('./routes/facturas'));
+app.use('/api/inventario', inventarioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
